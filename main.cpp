@@ -10,8 +10,8 @@ Type Min(Type a, Type b) {
 }
 template <>
 char Min<char>(char a, char b) {
-	
-	return printf("”šˆÈŠO‚Í‘ã“ü‚Å‚«‚Ü‚¹‚ñ\n");
+	printf("”šˆÈŠO‚Í‘ã“ü‚Å‚«‚Ü‚¹‚ñ\n");
+	return 0;
 }
 
 int main() {
