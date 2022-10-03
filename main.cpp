@@ -1,25 +1,34 @@
 #include <stdio.h>
 
-template <typename Type>
-Type Min(Type a, Type b) {
-	if (a >= b) {
-		return static_cast<Type>(a);
+int RecursivePay(int time,int wage) {
+	if (time <= 1) {
+		return wage;
 	}
-
-	return static_cast<Type>(b);
-}
-template <>
-char Min<char>(char a, char b) {
-	
-	return printf("”šˆÈŠO‚Í‘ã“ü‚Å‚«‚Ü‚¹‚ñ\n");
+	wage = wage + (wage * 2 - 50);
+	return RecursivePay(time - 1, wage);
 }
 
 int main() {
 
-	printf("%d\n", Min<int>(114, 51));
-	printf("%f\n", Min<float>(11.4f, 51.4f));
-	printf("%f\n", Min<double>(11.4, 51.4));
-	printf("%c\n", Min<char>('ABC', 51.4));
+	int timeLimits = 8; // 8ŠÔ
+
+	// ‹‹
+	const int nomalWage = 1072;
+	int recWage = 100;
+
+	// ‰Ò‚¢‚¾Šz Ši”[•Ï”
+	int depositNomal = 0;
+	int depositRec = 0;
+
+
+	for (int i = 0; i < timeLimits; i++) {
+		depositNomal += nomalWage;
+	}
+	depositRec = RecursivePay(timeLimits, recWage);
+	
+	printf("Ä‹A“I : %d\n", depositRec);
+	printf("ˆê”Ê“I : %d\n", depositNomal);
+	
 
 	return 0;
 }
