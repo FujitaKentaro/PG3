@@ -1,34 +1,37 @@
 #include <stdio.h>
 
-int RecursivePay(int time,int wage) {
+int RecursivePay(int time) {
 	if (time <= 1) {
-		return wage;
+		return 100;
 	}
-	wage = wage + (wage * 2 - 50);
-	return RecursivePay(time - 1, wage);
+
+	return (RecursivePay(time - 1) * 2 - 50);
+}
+
+int RecursiveResult(int time) {
+	int result = 0;
+	for (int i = 1; i <= time; i++) {
+		result += RecursivePay(i);
+	}
+	return result;
+}
+int GeneralPay(int time) {
+	if (time <= 0) {
+		return 0;
+	}
+	return 1072 * time;
 }
 
 int main() {
-
-	int timeLimits = 8; // 8ŠÔ
-
-	// ‹‹
-	const int nomalWage = 1072;
-	int recWage = 100;
-
-	// ‰Ò‚¢‚¾Šz Ši”[•Ï”
-	int depositNomal = 0;
-	int depositRec = 0;
-
-
-	for (int i = 0; i < timeLimits; i++) {
-		depositNomal += nomalWage;
+	int time = 1;
+	while (true)
+	{
+		if (RecursiveResult(time) > GeneralPay(time)) {
+			printf("\n %d ŠÔ“­‚­‚Æ %d‰~‚Å Ä‹A“I ‚ÌŸ‚¿\n", time, RecursiveResult(time));
+			break;
+		}
+		time++;
 	}
-	depositRec = RecursivePay(timeLimits, recWage);
-	
-	printf("Ä‹A“I : %d\n", depositRec);
-	printf("ˆê”Ê“I : %d\n", depositNomal);
-	
 
 	return 0;
 }
