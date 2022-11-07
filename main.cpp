@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <time.h>
 #include <stdlib.h>
+#include <functional>
 
 typedef void (*PFunc)(int*);
 
@@ -12,11 +13,21 @@ void SetTimeout(int second);
 // ユーザー関係
 void SetPlayerNum(int* num);
 
-int main(int argc ,char *argv[]) {
+int main(int argc ,const char *argv[]) {
 
-	srand(time(nullptr));
+	int num=10;
+	std::function<int(int)> fx = [=](int i) {return i + 1; };
 
-	SetTimeout(3000); // 3000ミリ秒？
+	auto fx2 = [=](int i) {return i + 1; };
+
+	printf("%d\n", fx(num));
+	printf("%d\n", fx2(2));
+
+	//[]() { printf("lamda test"); }();
+
+	//srand(time(nullptr));
+
+	//SetTimeout(3000); // 3000ミリ秒？
 
 	return 0;
 }
