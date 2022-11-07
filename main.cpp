@@ -6,13 +6,14 @@
 typedef void (*PFunc)(int*);
 
 // 関数
-void Callback(int* num);
+void isCorrect(int* num);
 void SetTimeout(int second);
 
 // ユーザー関係
 void SetPlayerNum(int* num);
 
-int main() {
+int main(int argc ,char *argv[]) {
+
 	srand(time(nullptr));
 
 	SetTimeout(3000); // 3000ミリ秒？
@@ -21,7 +22,7 @@ int main() {
 }
 
 // 関数定義
-void Callback(int* num) {
+void isCorrect(int* num) {
 	int result;
 	result = rand() % 12 + 1;
 	// ランダムな値を返す
@@ -44,7 +45,7 @@ void SetTimeout(int second) {
 	// 待機時間
 	Sleep(second);
 	// コールバック関数
-	p = Callback;
+	p = isCorrect;
 	p(&num);
 }
 
