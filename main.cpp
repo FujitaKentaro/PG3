@@ -6,22 +6,26 @@
 typedef void (*PFunc)(int*);
 
 // 関数
-void Callback(int* num);
-void SetTimeout(int second);
+void isCorrect(int* num);
+void SetTimeout(int second, PFunc p);
 
 // ユーザー関係
 void SetPlayerNum(int* num);
 
-int main() {
+int main(int argc ,char *argv[]) {
+
 	srand(time(nullptr));
 
-	SetTimeout(3000); // 3000ミリ秒？
+	PFunc p;
+	p = SetPlayerNum;
+
+	SetTimeout(3000,p); // 3000ミリ秒？
 
 	return 0;
 }
 
 // 関数定義
-void Callback(int* num) {
+void isCorrect(int* num) {
 	int result;
 	result = rand() % 12 + 1;
 	// ランダムな値を返す
@@ -36,15 +40,16 @@ void Callback(int* num) {
 	}
 }
 
-void SetTimeout(int second) {
+void SetTimeout(int second,PFunc pf) {
 	PFunc p;
 	int num;
-	p = SetPlayerNum;
-	p(&num);
+	// 引数でもらった関数の実行
+	pf(&num);
+
 	// 待機時間
 	Sleep(second);
-	// コールバック関数
-	p = Callback;
+	// 関数ポインタ
+	p = isCorrect;
 	p(&num);
 }
 
