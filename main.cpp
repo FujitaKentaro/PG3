@@ -6,9 +6,6 @@
 
 using namespace std;
 
-// 関数
-//void SetTimeout(int second, std::function<void(int*)> PlNum/* std::function<void(int*)> Corect*/);
-
 int main(int argc ,const char *argv[]) {
 
 	srand(time(nullptr));
@@ -16,7 +13,7 @@ int main(int argc ,const char *argv[]) {
 	int waitTime = 3;
 
 	
-	
+	// ラムダ式
 	std::function<void(int*)> PlayerNum = [](int* num) {
 		printf("値を入力してください\n\n");
 		scanf_s("%d", num);
@@ -53,29 +50,9 @@ int main(int argc ,const char *argv[]) {
 
 	};
 
+
+	// 実行
 	SetTimeOut(waitTime,PlayerNum); 
 
 	return 0;
 }
-
-// 関数定義
-
-//void SetTimeout(int second, std::function<void(int*)> PlNum) {
-//	int result;
-//	int num;
-//	PlNum(&num);
-//
-//	// 待機時間
-//	Sleep(second * 1000);
-//	
-//	result = rand() % 12 + 1;
-//	// ランダムな値を返す
-//	printf(" 出目：%d\n", result);
-//	if (result % 2 == 0 && num % 2 == 0 ||
-//		result % 2 == 1 && num % 2 == 1) {
-//		printf("\n 正解 \n");
-//	}
-//	else {
-//		printf("\n 不正解 \n");
-//	}
-//}
