@@ -53,5 +53,7 @@ int main(int argc, const char* argv[]) {
 	// Às
 	SetTimeOut(&num, PlayerNum);
 
+	system("pause");
+
 	return 0;
 }
