@@ -3,55 +3,64 @@
 #include <time.h>
 #include <stdlib.h>
 #include <functional>
+#include <vector>
 
 using namespace std;
 
-int main(int argc ,const char *argv[]) {
+int main() {
 
-	srand(time(nullptr));
+	vector<int> b = { 10,20,30 };
 
-	int waitTime = 3;
+	b.push_back(40); // 追加
+	b.pop_back();	// 削除
+	{
+		// 配列と全く同じや
+		// float型の可変長配列 ｃ （要素数：3）
+		vector<float> c = { 0.0f,1.0f,2.0f };
 
-	
-	// ラムダ式
-	std::function<void(int*)> PlayerNum = [](int* num) {
-		int result;
-		result = rand() % 12 + 1;
-		// ランダムな値を返す
-		printf(" 出目：%d\n", result);
-		if (result % 2 == 0 && *num % 2 == 0 ||
-			result % 2 == 1 && *num % 2 == 1) {
-			printf("\n 正解 \n");
+		//添字1の要素表示（1.0）
+		printf("%f", c[1]);
+
+		// 要素に-1.5代入
+		c[1] = -1.5f;
+
+		// 添え字1の要素を表示
+		printf("%f", c[1]);
+	}
+	{
+		// int型の可変長配列 d
+		vector<int> d;
+
+		// 要素数を10っこに変更
+		d.resize(10);
+
+		// 要素数を取得
+		int size = d.size();
+
+		// 全部の要素を表示
+		for (int i = 0; i < size; i++) {
+			printf("%f", d[i]);
 		}
-		else {
-			printf("\n 不正解 \n");
-		}
-	};
-	std::function<void(int*, std::function<void(int*)>)> SetTimeOut = [](int* num, std::function<void(int*)> PlNum) {
-
-		// 待機時間
-		Sleep(3* 1000);
-
-		PlNum(num);
-	};
-	int num;
-
-	printf("値を入力してください\n\n");
-	scanf_s(" %d", &num);
-	if (num % 2 == 0) {
-		printf("偶数が入力されました\n");
-		num = 2;
 	}
-	else if (num % 2 == 1) {
-		printf("奇数が入力されました\n");
-		num = 1;
-	}
-	else {
-		printf("予期せぬ値が入力されました\n");
+	{
+		// int型の可変長配列 e （要素数：3）
+		vector<int> e = {1,2,3};
+
+		// int型の可変長配列用のイテレータ
+		vector<int>::iterator it;
+
+		// eの先頭要素を指す
+		it = e.begin();
+
+		cout << *it << endl;
+
+		it++;
+
+		// it がさしている要素を表示
+		cout << *it << endl;
 	}
 
-	// 実行
-	SetTimeOut(&num,PlayerNum); 
+	system("pause");
 
 	return 0;
 }
