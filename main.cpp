@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <functional>
 #include <vector>
+
 #include <iostream>
 #include <list>
 
@@ -11,62 +12,46 @@ using namespace std;
 
 int main() {
 
+	std::list<const char*> yamanote = {
+		"Tokyo","Kanda","Akihabara","Okatimati","Ueno",
+		"Uguisudani","Nippori","Tabata","Komagome","Sugamo",
+		"Ootuka","Ikebukuro","Mejiro","Takadanobaba","shinookubo",
+		"Shinjuku","Yoyogi","Harajuku","Shibuya","Ebisu","Meguro",
+		"Gotanda","Oosaki","Shinagawa","Tamati","Hamamatutyou",
+		"Shinbasi","Yurakutyou"		
+	};
 
-	/*
-	vector<int> b = { 10,20,30 };
-
-	b.push_back(40); // 追加
-	b.pop_back();	// 削除
-	{
-		// 配列と全く同じや
-		// float型の可変長配列 ｃ （要素数：3）
-		vector<float> c = { 0.0f,1.0f,2.0f };
-
-		//添字1の要素表示（1.0）
-		printf("%f", c[1]);
-
-		// 要素に-1.5代入
-		c[1] = -1.5f;
-
-		// 添え字1の要素を表示
-		printf("%f", c[1]);
+	std::cout << "1970s";
+	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
+		std::cout << *itr << "\n";
 	}
-	{
-		// int型の可変長配列 d
-		vector<int> d;
+	std::cout<< "\n";
 
-		// 要素数を10っこに変更
-		d.resize(10);
-
-		// 要素数を取得
-		int size = d.size();
-
-		// 全部の要素を表示
-		for (int i = 0; i < size; i++) {
-			printf("%f", d[i]);
+	std::cout << "2019s";
+	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
+		if (*itr == "Tabata") {
+			itr = yamanote.insert(itr, "Nishinippori");
+			++itr;
 		}
 	}
-	{
-		// int型の可変長配列 e （要素数：3）
-		vector<int> e = {1,2,3};
-
-		// int型の可変長配列用のイテレータ
-		vector<int>::iterator it;
-
-		// eの先頭要素を指す
-		it = e.begin();
-
-		cout << *it << endl;
-
-		it++;
-
-		// it がさしている要素を表示
-		cout << *it << endl;
+	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
+		std::cout << *itr << "\n";
 	}
-	*/
+	std::cout << "\n";
 
+	std::cout << "2022s";
+	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
+		
+		if (*itr == "Tamati") {
+			itr = yamanote.insert(itr, "Takanawagetowei");
+			++itr;
+		}
+	}
+	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
+		std::cout << *itr << "\n";
+	}
 
-	system("pause");
+	
 
 	return 0;
 }
