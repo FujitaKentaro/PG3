@@ -51,7 +51,7 @@ int main() {
 		std::cout << *itr << "\n";
 	}
 
-	
+	system("pause");
 
 	return 0;
 }
