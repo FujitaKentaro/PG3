@@ -21,13 +21,13 @@ int main() {
 		"Shinbasi","Yurakutyou"		
 	};
 
-	std::cout << "1970s";
+	std::cout << "1970s\n";
 	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
 		std::cout << *itr << "\n";
 	}
 	std::cout<< "\n";
 
-	std::cout << "2019s";
+	std::cout << "2019s\n";
 	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
 		if (*itr == "Tabata") {
 			itr = yamanote.insert(itr, "Nishinippori");
@@ -39,7 +39,7 @@ int main() {
 	}
 	std::cout << "\n";
 
-	std::cout << "2022s";
+	std::cout << "2022s\n";
 	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
 		
 		if (*itr == "Tamati") {
@@ -51,7 +51,7 @@ int main() {
 		std::cout << *itr << "\n";
 	}
 
-	
+	system("pause");
 
 	return 0;
 }
