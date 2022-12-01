@@ -4,7 +4,7 @@
 
 // 手順1 単方向リストの構造体の定義
 typedef struct CELL {
-	char str[30];
+	char str[8];
 	struct CELL* next;
 } CELL;
 
@@ -13,12 +13,12 @@ void index(CELL* cell);	// 一覧を表示する関数のプロトタイプ宣言
 
 
 int main() {
-	char str[30];
+	char str[8];
 	// 2 先頭のセルの宣言
 	CELL head;
 	head.next = nullptr;	// ヴィジュアルスタジオではNEXTに何らかの値が入った状態で初期化されるので、nullポインターを代入する
 	while (true){
-		scanf_s("%s", str,30);
+		scanf_s("%s", str,8);
 
 		// 3 最後尾にセルを追加
 		create(&head, str);
@@ -27,8 +27,6 @@ int main() {
 		index(&head);
 	}
 
-	system("pause");
-
 	return 0;
 }
 
@@ -36,7 +34,7 @@ void create(CELL* cell,const char* buf) {
 	CELL* newCell;
 	// 新規作成するセル分のメモリを確保する
 	newCell = (CELL*)malloc(sizeof(CELL));
-	strcpy_s(newCell->str, 30, buf);
+	strcpy_s(newCell->str, 8, buf);
 	newCell->next = nullptr;
 
 	// 最後（最新）のセルのアドレスの一つ目の処理は引数から持ってきた
