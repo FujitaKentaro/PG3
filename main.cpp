@@ -17,14 +17,6 @@ int main()
 {
 	TwowayList<std::string> lst;
 
-	lst.PushBack("5");
-	lst.PushBack("4");
-	lst.PushBack("3");
-	lst.PushBack("2");
-	lst.PushBack("1");
-
-	lst.Dump();
-
 	//要素の操作の操作番号
 	int menuNum = 0;
 
@@ -159,7 +151,7 @@ void Insert(TwowayList<Type>& list, int& operationNum)
 	if (insertNum == "")
 	{
 		std::cout << "追加する要素の値を入力してください" << std::endl;
-		int element;
+		Type element{};
 
 		std::cin >> element;
 
@@ -172,7 +164,7 @@ void Insert(TwowayList<Type>& list, int& operationNum)
 		int index = std::atoi(insertNum.c_str());
 
 		std::cout << "追加する要素の値を入力してください" << std::endl;
-		int element;
+		Type element{};
 
 		std::cin >> element;
 
@@ -213,7 +205,7 @@ void Edit(TwowayList<Type>& list, int& operationNum)
 	{
 		std::cout << elementNum << "番目の要素の変更する値を入力してください。" << std::endl;
 
-		int changeElement{};
+		Type changeElement{};
 		std::cin >> changeElement;
 
 		list.ChangeValue(changeElement, elementNum);
