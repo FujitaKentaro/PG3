@@ -32,8 +32,10 @@ int main() {
 
 void create(CELL* cell,const char* buf) {
 	CELL* newCell;
+
 	// V‹Kì¬‚·‚éƒZƒ‹•ª‚Ìƒƒ‚ƒŠ‚ğŠm•Û‚·‚é
 	newCell = (CELL*)malloc(sizeof(CELL));
+
 	strcpy_s(newCell->str, 8, buf);
 	newCell->next = nullptr;
 
@@ -43,11 +45,12 @@ void create(CELL* cell,const char* buf) {
 	{
 		cell = cell->next;
 	}
-	cell= newCell;
+	cell->next= newCell;
 }
 void index(CELL* cell) {
 	while (cell->next!=nullptr)
 	{
-		printf("%s\n", cell->str);
+		cell = cell->next;
+		printf("\t%s\n", cell->str);
 	}
 }
