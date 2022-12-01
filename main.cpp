@@ -16,15 +16,6 @@ void Change(TwowayList<int>& list, int& select);
 int main()
 {
 	TwowayList<int> lst;
-
-	lst.PushBack(5);
-	lst.PushBack(4);
-	lst.PushBack(3);
-	lst.PushBack(2);
-	lst.PushBack(1);
-
-	lst.Dump();
-
 	//—v‘f‚Ì‘€ì‚Ì‘€ì”Ô†
 	int menuNum = 0;
 
