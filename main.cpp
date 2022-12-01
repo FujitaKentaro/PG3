@@ -3,19 +3,28 @@
 #include <string.h>
 #include "TwowayList.h"
 
-void Display(TwowayList<int>& list, int& select, int& menu);
 
-void Insert(TwowayList<int>& list, int& select);
-
-void Edit(TwowayList<int>& list, int& select);
-
-void Delete(TwowayList<int>& list, int& select);
-
-void Change(TwowayList<int>& list, int& select);
+template <typename Type>
+void Display(TwowayList<Type>& list, int& select, int& menu);
+template <typename Type>
+void Insert(TwowayList<Type>& list, int& select);
+template <typename Type>
+void Edit(TwowayList<Type>& list, int& select);
+template <typename Type>
+void Delete(TwowayList<Type>& list, int& select);
 
 int main()
 {
-	TwowayList<int> lst;
+	TwowayList<std::string> lst;
+
+	lst.PushBack("5");
+	lst.PushBack("4");
+	lst.PushBack("3");
+	lst.PushBack("2");
+	lst.PushBack("1");
+
+	lst.Dump();
+
 	//óvëfÇÃëÄçÏÇÃëÄçÏî‘çÜ
 	int menuNum = 0;
 
@@ -66,8 +75,8 @@ int main()
 	return 0;
 }
 
-
-void Display(TwowayList<int>& list, int& operationNum, int& displayOperationNum) {
+template <typename Type>
+void Display(TwowayList<Type>& list, int& operationNum, int& displayOperationNum) {
 	std::cout << "[óvëfÇÃï\é¶]\n";
 	std::cout << "1.óvëfÇÃàÍóóï\é¶\n";
 	std::cout << "2.èáî‘ÇéwíËÇµÇƒóvëfÇï\é¶\n";
@@ -135,7 +144,8 @@ void Display(TwowayList<int>& list, int& operationNum, int& displayOperationNum)
 	}
 }
 
-void Insert(TwowayList<int>& list, int& operationNum)
+template <typename Type>
+void Insert(TwowayList<Type>& list, int& operationNum)
 {
 	std::cout << "[ÉäÉXÉgóvëfÇÃë}ì¸]" << std::endl;
 	std::cout << std::endl;
@@ -188,7 +198,8 @@ void Insert(TwowayList<int>& list, int& operationNum)
 	}
 }
 
-void Edit(TwowayList<int>& list, int& operationNum)
+template <typename Type>
+void Edit(TwowayList<Type>& list, int& operationNum)
 {
 	std::cout << "[óvëfÇÃï“èW]" << std::endl;
 	std::cout << std::endl;
@@ -234,7 +245,8 @@ void Edit(TwowayList<int>& list, int& operationNum)
 
 }
 
-void Delete(TwowayList<int>& list, int& operationNum)
+template <typename Type>
+void Delete(TwowayList<Type>& list, int& operationNum)
 {
 	std::cout << "[óvëfÇÃçÌèú]" << std::endl;
 	std::cout << std::endl;
