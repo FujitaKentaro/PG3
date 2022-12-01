@@ -159,7 +159,7 @@ void Insert(TwowayList<Type>& list, int& operationNum)
 	if (insertNum == "")
 	{
 		std::cout << "追加する要素の値を入力してください" << std::endl;
-		int element;
+		Type element{};
 
 		std::cin >> element;
 
@@ -172,7 +172,7 @@ void Insert(TwowayList<Type>& list, int& operationNum)
 		int index = std::atoi(insertNum.c_str());
 
 		std::cout << "追加する要素の値を入力してください" << std::endl;
-		int element;
+		Type element{};
 
 		std::cin >> element;
 
@@ -213,7 +213,7 @@ void Edit(TwowayList<Type>& list, int& operationNum)
 	{
 		std::cout << elementNum << "番目の要素の変更する値を入力してください。" << std::endl;
 
-		int changeElement{};
+		Type changeElement{};
 		std::cin >> changeElement;
 
 		list.ChangeValue(changeElement, elementNum);
