@@ -1,4 +1,6 @@
 #pragma once
+
+
 class SceneManager final
 {
 private:
@@ -6,6 +8,7 @@ private:
 	SceneManager();
 	//デストラクタをprivateにする
 	~SceneManager();
+
 public:
 	// インスタンス
 	static SceneManager* GetInstance();
