@@ -46,15 +46,7 @@ int main(int argc, const char* argv[]) {
 	std::function<void(std::function<void()>, int)>setTimeout = [=](std::function<void()> plNum, int num) {
 		Sleep(num * 1000);
 		plNum();
-	};
-	//std::function<void(int*, std::function<void(int*)>)> SetTimeOut = [](int* num, std::function<void(int*)> PlNum) {
-
-	//	// ë“ã@éûä‘
-	//	Sleep(3 * 1000);
-
-	//	PlNum(num);
-	//};
-	
+	};	
 
 	// é¿çs
 	setTimeout(PlayerNum,num);
