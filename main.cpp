@@ -2,31 +2,60 @@
 #include <stdlib.h>
 #include <Windows.h>
 
-#include "SceneManager.h"
+#include "Enemy.h"
+
 
 int main() {
 
-	SceneManager* sceneManager = SceneManager::GetInstance();
-	int num = 0;
+
+
+	Enemy* enemy = new Enemy;
+	Enemy* enemy2 = new Enemy;
+	Enemy* enemy3 = new Enemy;
+
+
+	int isDead = 0;
+
+	enemy->Initialize();
+	enemy2->Initialize();
+	enemy3->Initialize();
+
 
 	while (true) {
 
-		sceneManager->ChangeScene(num);
+		
+		printf("1:¶‚©‚·2:“|‚·\n");
+		scanf_s("%d", &isDead);
 
-		if (num >= 4) {
-
-			system("cls");
-			num = 0;
+		switch (isDead)
+		{
+		case 1:// 
+			Enemy::isAlive = false;
+			break;
+		case 2:// Ž€‚Ê
+			Enemy::isAlive = true;
+			break;
+		default:
+			printf("1or2 ‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
+			break;
 		}
-		else {
 
-			num++;
+		if (isDead == 1 || isDead == 2) {
+			enemy->Update();
+			enemy2->Update();
+			enemy3->Update();
 		}
-
-		Sleep(1 * 1000);
+		// Œ‹‰Ê‚ðŒ©‚â‚·‚­‚·‚é‚½‚ß
+		Sleep(5 * 1000);
+		system("cls");
 	}
+
+	delete enemy;
+	delete enemy2;
+	delete enemy3;
 
 	system("pause");
 	return 0;
 
 }
+
