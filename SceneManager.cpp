@@ -14,43 +14,35 @@ SceneManager* SceneManager::GetInstance()
 	return &instance;
 }
 
-void SceneManager::ChangeScene(int sceneNo)
+void SceneManager::ChangeScene(int num)
 {
-	switch (sceneNo)
+	switch (num)
 	{
 	case 0:
-		TitleScene();
+
+		printf("SceneNo:0\n");
+		printf("\n TITLE \n\n");
+
 		break;
 	case 1:
-		NewGameScene();
+
+		printf("SceneNo:1\n");
+		printf("\n GAME SCENE 1 \n");
+
 		break;
 	case 2:
-		GamePlayScene();
+
+		printf("SceneNo:2\n");
+		printf("\n GAME SCENE 2 \n");
+
 		break;
 	case 3:
-		GameClear();
+
+		printf("SceneNo:3\n");
+		printf("\n GAME CLEAR \n");
+
 		break;
 	default:
 		break;
 	}
-}
-
-void SceneManager::TitleScene() {
-	printf("SceneNo:0\n");
-	printf("\n TITLE \n\n");
-}
-
-void SceneManager::NewGameScene() {
-	printf("SceneNo:1\n");
-	printf("\n GAME SCENE 1 \n");
-}
-
-void SceneManager::GamePlayScene() {
-	printf("SceneNo:2\n");
-	printf("\n GAME SCENE 2 \n");
-}
-
-void SceneManager::GameClear() {
-	printf("SceneNo:3\n");
-	printf("\n GAME CLEAR \n");
 }

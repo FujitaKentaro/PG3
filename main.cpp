@@ -9,15 +9,17 @@ int main() {
 
 	while (true) {
 
+		sceneManager->ChangeScene(num);
+
 		if (num >= 4) {
 
 			system("cls");
 			num = 0;
 		}
+		else {
 
-		sceneManager->ChangeScene(num);
-
-		num++;
+			num++;
+		}
 
 		Sleep(1 * 1000);
 	}
