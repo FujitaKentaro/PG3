@@ -20,5 +20,7 @@ public:
 public:
 	// Ã“Iƒƒ“ƒo
 	static void (Enemy::* pFunc[])();
+
+private:
 	int phaseNum = 0;
 };
