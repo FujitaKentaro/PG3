@@ -5,18 +5,20 @@
 class Enemy
 {
 public:
-	//メンバ関数
-	// ?初期化
-	void Initialize();
 
-	// ?アップデート
+	Enemy();
+	// 初期化
+	void Initialize();
+	// アップデート
 	void Update();
 
-	// 描画処理
-	void Draw();
+	// 状態関数
+	void Approach();
+	void Attack();
+	void Secession();
 
 public:
-
-	//静的メンバ変数
-	static bool isAlive;
+	// 静的メンバ
+	static void (Enemy::* pFunc[])();
+	int phaseNum = 0;
 };
