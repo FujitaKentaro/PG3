@@ -1,29 +1,36 @@
-#include <stdio.h>
+ï»¿#include "Circle.h"
+#include "Rectangle.h"
+#include "IShape.h"
+
+#include <time.h>
 #include <stdlib.h>
-#include <Windows.h>
-
-#include "Enemy.h"
-
 
 int main() {
 
-	Enemy* enemy = new Enemy;
+	srand(time(nullptr));
+	int Rand = rand() % 12 + 1;
 
-	enemy->Initialize();
-
-	while (true) {
-
-		enemy->Update();
-		
-		// Œ‹‰Ê‚ğŒ©‚â‚·‚­‚·‚é‚½‚ß
-		Sleep(1 * 1000);
-		system("cls");
+	// Âã‚µã‚¤ã‚ºæ±ºã‚
+	const int size = 2;
+	IShape* ishape[] =
+	{
+		new Circle(Rand),
+		new Rectangle(Rand,Rand)
+	};
+	
+	for (int i = 0; i < size; i++)
+	{
+		// è¨ˆç®—
+		ishape[i]->size();
+		// æç”»
+		ishape[i]->draw();
 	}
 
-	delete enemy;
+	// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	for (int i = 0; i < size; i++)
+	{
+		ishape[i]->~IShape();
+	}
 
-	system("pause");
 	return 0;
-
 }
-
