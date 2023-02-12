@@ -127,19 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Circle.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="IShape.cpp" />
+    <ClCompile Include="Content.cpp" />
+    <ClCompile Include="DeadLine.cpp" />
+    <ClCompile Include="ID.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="Status.cpp" />
+    <ClCompile Include="Taask.cpp" />
+    <ClCompile Include="TaskManager.cpp" />
+    <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Circle.h" />
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="IShape.h" />
-    <ClInclude Include="Rectangle.h" />
-    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Content.h" />
+    <ClInclude Include="DeadLine.h" />
+    <ClInclude Include="ID.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="Status.h" />
+    <ClInclude Include="Taask.h" />
+    <ClInclude Include="TaskManager.h" />
+    <ClInclude Include="Title.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
